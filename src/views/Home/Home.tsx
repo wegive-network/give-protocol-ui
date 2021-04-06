@@ -1,52 +1,130 @@
 import React from 'react'
-import styled from 'styled-components'
-import logo from '../../assets/img/logo.jpeg'
-import Button from '../../components/Button'
-import Container from '../../components/Container'
-import Page from '../../components/Page'
-import PageHeader from '../../components/PageHeader'
-import Spacer from '../../components/Spacer'
-import Balances from './components/Balances'
+import './Home.css'
+import { Button, makeStyles } from '@material-ui/core'
+import logo from './wegive-logo.png'
+import { useHistory } from 'react-router'
+import { ReactComponent as GitHubLogo } from '../../assets/img/github.svg'
+import { ReactComponent as RedditLogo } from '../../assets/img/reddit.svg'
+import { ReactComponent as DiscordLogo } from '../../assets/img/discord.svg'
+import { ReactComponent as TwitterLogo } from '../../assets/img/twitter.svg'
+import { ReactComponent as BlockchainImage } from '../../assets/img/Tech_Life_Blockchain.svg'
+import { ReactComponent as StarsImage } from '../../assets/img/stars.svg'
+
+const useStyles = makeStyles({
+  button: {
+    color: '#000',
+    backgroundColor: '#aec5eb',
+    '&:hover': {
+      backgroundColor: '#aec5eb',
+    },
+  },
+  navButton: {
+    textTransform: 'unset',
+    margin: '0.5em',
+    color: '#fff',
+    backgroundColor: '#000',
+    borderRadius: '2rem',
+    height: 'fit-content',
+    '&:hover': {
+      backgroundColor: '#000',
+    },
+  },
+})
 
 const Home: React.FC = () => {
-  return (
-    <Page>
-      <PageHeader
-        icon={<img src={logo} height={120} />}
-        title="Give Protocol is Ready"
-        subtitle="Stake Give LP tokens to claim your very own yummy Give!"
-      />
+  const classes = useStyles()
+  const history = useHistory()
+  const socialLinks = {
+    github: 'https://www.github.com',
+    reddit: 'https://www.reddit.com',
+    discord: 'https://www.discord.com',
+    twitter: 'https://www.twitter.com',
+  }
 
-      <Container>
-        <Balances />
-      </Container>
-      <Spacer size="lg" />
-      <StyledInfo>
-        Scaling the social layer of Blockchains by giving
-      </StyledInfo>
-      <Spacer size="lg" />
-      <div
-        style={{
-          margin: '0 auto',
-        }}
-      >
-        <Button text="🔪 See the Menu" to="/farms" variant="secondary" />
+  return (
+    <div className="App">
+      <div className="grid__item grid__item_nav">
+        <img
+          src={logo}
+          height="64"
+          style={{ marginTop: -4, cursor: 'pointer' }}
+          alt="logo"
+        />
+        <Button
+          className={classes.navButton}
+          variant="contained"
+          color="primary"
+          onClick={() => history.push('/about')}
+        >
+          About
+        </Button>
+        <Button
+          className={classes.navButton}
+          variant="contained"
+          color="primary"
+          onClick={() => history.push('/learn')}
+        >
+          Learn
+        </Button>
+        <Button
+          className={classes.navButton}
+          variant="contained"
+          color="primary"
+          onClick={() => history.push('/community')}
+        >
+          Community
+        </Button>
       </div>
-    </Page>
+      <div className="grid__item grid__item_nav_btn">
+        <Button
+          className={classes.button}
+          style={{ margin: '0.5em' }}
+          variant="contained"
+          color="primary"
+          onClick={() => history.push('/app')}
+        >
+          Enter App
+        </Button>
+      </div>
+      <div className="grid__item grid__item_item1">
+        <h1>We give.</h1>
+        <h3>Donate crypto to causes you care about</h3>
+        <div>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+          >
+            Learn more
+          </Button>
+        </div>
+        <div className="social-logo-container">
+          <GitHubLogo
+            className="social-logo"
+            onClick={() => (window.location.href = socialLinks.github)}
+          />
+          <RedditLogo
+            className="social-logo"
+            onClick={() => (window.location.href = socialLinks.reddit)}
+          />
+          <DiscordLogo
+            className="social-logo"
+            onClick={() => (window.location.href = socialLinks.discord)}
+          />
+          <TwitterLogo
+            className="social-logo"
+            onClick={() => (window.location.href = socialLinks.twitter)}
+          />
+        </div>
+      </div>
+      <div className="grid__item grid__item_item2">
+        <BlockchainImage />
+      </div>
+      <div className="grid__item grid__item_item3">
+        <StarsImage />
+      </div>
+    </div>
   )
 }
-
-const StyledInfo = styled.h3`
-  color: ${(props) => props.theme.color.grey[500]};
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-  > b {
-    color: ${(props) => props.theme.color.grey[600]};
-  }
-`
 
 export default Home

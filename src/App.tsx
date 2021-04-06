@@ -13,8 +13,9 @@ import useModal from './hooks/useModal'
 import theme from './theme'
 import Farms from './views/Farms'
 import Home from './views/Home'
-import Staking from "./views/Staking";
+import Staking from './views/Staking'
 import { CHAIN_ID } from './give/lib/constants'
+import AppHome from './views/Home/AppHome'
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -30,11 +31,21 @@ const App: React.FC = () => {
   return (
     <Providers>
       <Router>
-        <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
-        <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
+        {window.location.pathname !== '/' && (
+          <>
+            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
+            <MobileMenu
+              onDismiss={handleDismissMobileMenu}
+              visible={mobileMenu}
+            />
+          </>
+        )}
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/app" exact>
+            <AppHome />
           </Route>
           <Route path="/farms">
             <Farms />
