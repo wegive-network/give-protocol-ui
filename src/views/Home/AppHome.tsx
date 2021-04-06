@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../../assets/img/logo.jpeg'
+import logo from '../../assets/img/wegive-logo.png'
 import Button from '../../components/Button'
 import Container from '../../components/Container'
 import Page from '../../components/Page'
@@ -12,7 +12,7 @@ const AppHome: React.FC = () => {
   return (
     <Page>
       <PageHeader
-        icon={<img src={logo} height={120} />}
+        icon={<img src={logo} height={0} />}
         title="Give Protocol is Ready"
         subtitle="Stake Give LP tokens to claim your very own yummy Give!"
       />

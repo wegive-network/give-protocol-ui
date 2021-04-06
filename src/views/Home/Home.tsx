@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import { Button, makeStyles } from '@material-ui/core'
-import logo from './wegive-logo.png'
+import logo from '../../assets/img/wegive-logo.png'
 import { useHistory } from 'react-router'
 import { ReactComponent as GitHubLogo } from '../../assets/img/github.svg'
 import { ReactComponent as RedditLogo } from '../../assets/img/reddit.svg'

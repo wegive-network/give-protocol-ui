@@ -31,23 +31,24 @@ const App: React.FC = () => {
   return (
     <Providers>
       <Router>
-        {window.location.pathname !== '/' && (
-          <>
-            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
-            <MobileMenu
-              onDismiss={handleDismissMobileMenu}
-              visible={mobileMenu}
-            />
-          </>
-        )}
         <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/app" exact>
+            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
+            <MobileMenu
+              onDismiss={handleDismissMobileMenu}
+              visible={mobileMenu}
+            />
             <AppHome />
           </Route>
           <Route path="/farms">
+            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
+            <MobileMenu
+              onDismiss={handleDismissMobileMenu}
+              visible={mobileMenu}
+            />
             <Farms />
           </Route>
         </Switch>
