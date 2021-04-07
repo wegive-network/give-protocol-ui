@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* @font-face {
+  font-family: 'JekoSans';
+  src: url('../../assets/fonts/JekoSans-ExtraLight.otf') format('otf'),
+    url('../../assets/fonts/JekoSans-Medium.otf') format('otf'),
+    url('../../assets/fonts/JekoSans-ExtraBold.otf') format('otf'),
+    url('../../assets/fonts/Jeko-ExtraLightItalic.otf') format('otf'),
+    url('../../assets/fonts/Jeko-MediumItalic.otf') format('otf'),
+    url('../../assets/fonts/Jeko-ExtraBoldItalic.otf') format('otf');
+} */
+
 *,
 ::before,
 ::after {
@@ -26,8 +36,6 @@ body {
   display: grid;
   grid-template-columns: repeat(12, [col] minmax(0, 1fr));
   grid-template-rows: repeat(28, [row] minmax(0, 1fr));
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
 }
 
 .grid__item {
@@ -83,19 +91,21 @@ body {
 
 .social-logo {
   cursor: pointer;
+  z-index: 2;
 }
 
 .grid__item_item2 {
   grid-column: col 7 / span 6;
-  grid-row: row 8 / span 5;
+  grid-row: row 12 / span 1;
   align-self: end;
   justify-self: end;
   padding: 0;
+  margin-right: 1.5em;
 }
 
 .grid__item_item3 {
   grid-column: col 1 / span 6;
-  grid-row: row 8 / span 5;
+  grid-row: row 12 / span 1;
   align-self: end;
   justify-self: start;
   padding: 0;

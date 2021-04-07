@@ -130,7 +130,7 @@ const Home: React.FC = () => {
         <BlockchainImage />
       </div>
       <div className="grid__item grid__item_item3">
-        <StarsImage />
+        <StarsImage style={{ marginBottom: '-4px' }} />
       </div>
       <div className="grid__item grid__item_why">
         <h2>{'Why?'}</h2>
