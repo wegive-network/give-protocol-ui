@@ -12,9 +12,10 @@ import GiveProvider from './contexts/GiveProvider'
 import useModal from './hooks/useModal'
 import theme from './theme'
 import Farms from './views/Farms'
-import Home from './views/Home'
-import Staking from "./views/Staking";
+import Home from './views/AppHome'
+import Staking from './views/Staking'
 import { CHAIN_ID } from './give/lib/constants'
+import AppHome from './views/AppHome/AppHome'
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -30,13 +31,24 @@ const App: React.FC = () => {
   return (
     <Providers>
       <Router>
-        <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
-        <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
         <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
+          <Route path="/app" exact>
+            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
+            <MobileMenu
+              onDismiss={handleDismissMobileMenu}
+              visible={mobileMenu}
+            />
+            <AppHome />
+          </Route>
           <Route path="/farms">
+            <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
+            <MobileMenu
+              onDismiss={handleDismissMobileMenu}
+              visible={mobileMenu}
+            />
             <Farms />
           </Route>
         </Switch>

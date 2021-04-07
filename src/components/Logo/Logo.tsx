@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import logo from '../../assets/img/logo.jpeg'
+import logo from '../../assets/img/logo.png'
 
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
       <img src={logo} height="32" style={{ marginTop: -4 }} />
-      <StyledText>
-        Give
-      </StyledText>
+      <StyledText>Give</StyledText>
     </StyledLogo>
   )
 }
