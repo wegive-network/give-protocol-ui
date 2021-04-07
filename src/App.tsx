@@ -12,10 +12,10 @@ import GiveProvider from './contexts/GiveProvider'
 import useModal from './hooks/useModal'
 import theme from './theme'
 import Farms from './views/Farms'
-import Home from './views/Home'
+import Home from './views/AppHome'
 import Staking from './views/Staking'
 import { CHAIN_ID } from './give/lib/constants'
-import AppHome from './views/Home/AppHome'
+import AppHome from './views/AppHome/AppHome'
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)

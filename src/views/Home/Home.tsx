@@ -9,6 +9,10 @@ import { ReactComponent as DiscordLogo } from '../../assets/img/discord.svg'
 import { ReactComponent as TwitterLogo } from '../../assets/img/twitter.svg'
 import { ReactComponent as BlockchainImage } from '../../assets/img/Tech_Life_Blockchain.svg'
 import { ReactComponent as StarsImage } from '../../assets/img/stars.svg'
+import { InfoCard } from './components/InfoCard'
+const handsCoinImage = require('../../assets/img/hands_coin.png')
+const graphImage = require('../../assets/img/allura_stats_graph.png')
+const handsGiveImage = require('../../assets/img/hands_give.png')
 
 const useStyles = makeStyles({
   button: {
@@ -40,6 +44,11 @@ const Home: React.FC = () => {
     discord: 'https://www.discord.com',
     twitter: 'https://www.twitter.com',
   }
+  const infoCardTexts = [
+    'Connect a wallet and deposit your capital to a pool or vault',
+    'Stake your coins and earn GIVE',
+    'Vote to donate and support a cause you care about',
+  ]
 
   return (
     <div className="App">
@@ -122,6 +131,65 @@ const Home: React.FC = () => {
       </div>
       <div className="grid__item grid__item_item3">
         <StarsImage />
+      </div>
+      <div className="grid__item grid__item_why">
+        <h2>{'Why?'}</h2>
+      </div>
+      <div className="grid__item grid__item_why-card">
+        <div className="why-card">
+          <p>
+            GIVE Protocol aims to bridge the gap between DeFi and charitable
+            organizations by trustlessly allowing users to give their yields to
+            nonprofits of their choice.
+          </p>
+          <p>
+            The platform aims to empower existing users of DeFi to consider
+            charitable donations as an integral aspect of their financial
+            growth.
+          </p>
+          <p>
+            GIVE Protocol will also focus on being a user-friendly bridge to
+            existing philanthropy by connecting existing donors to the
+            exceptional interest rates in DeFi.
+          </p>
+          <p>
+            Through this initiative, GIVE Protocol firmly believes that it can
+            onboard thousands of new DeFi participants through a lossless
+            donation stream, without having to reduce their base capital.
+          </p>
+          <p>
+            The give protocol team will be engineering and research focussed and
+            work on the long term vision of building a more equitable world.
+          </p>
+        </div>
+      </div>
+      <div className="grid__item grid__item_how">
+        <h2>{'How does it work?'}</h2>
+      </div>
+      <div className="grid__item grid__item_infocards">
+        <InfoCard
+          number={'1.'}
+          title={infoCardTexts[0]}
+          image={
+            <img src={handsCoinImage} style={{ width: '75%' }} alt="coin" />
+          }
+        />
+        <InfoCard
+          number={'2.'}
+          title={infoCardTexts[1]}
+          image={<img src={graphImage} style={{ width: '75%' }} alt="graph" />}
+        />
+        <InfoCard
+          number={'3.'}
+          title={infoCardTexts[2]}
+          image={
+            <img
+              src={handsGiveImage}
+              style={{ width: '75%' }}
+              alt="money-hand"
+            />
+          }
+        />
       </div>
     </div>
   )
