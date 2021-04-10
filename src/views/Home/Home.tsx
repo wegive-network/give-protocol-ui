@@ -39,10 +39,10 @@ const Home: React.FC = () => {
   const classes = useStyles()
   const history = useHistory()
   const socialLinks = {
-    github: 'https://www.github.com',
+    github: 'https://github.com/wegive-network',
     reddit: 'https://www.reddit.com',
     discord: 'https://www.discord.com',
-    twitter: 'https://www.twitter.com',
+    twitter: 'https://twitter.com/Give_Protocol',
   }
   const infoCardTexts = [
     'Connect a wallet and deposit your capital to a pool or vault',
