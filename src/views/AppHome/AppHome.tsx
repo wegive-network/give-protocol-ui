@@ -13,7 +13,7 @@ const AppHome: React.FC = () => {
     <Page>
       <PageHeader
         icon={<img src={logo} height={0} />}
-        title="Give Protocol is Ready"
+        title="Give by Saving your hard earned money!"
         subtitle="Stake Give LP tokens to claim your very own yummy Give!"
       />
 
