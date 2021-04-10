@@ -14,7 +14,7 @@ const AppHome: React.FC = () => {
       <PageHeader
         icon={<img src={logo} height={0} />}
         title="Give by Saving your hard earned money!"
-        subtitle="Stake Give LP tokens to claim your own give!"
+        subtitle="Stake Give LP tokens to claim your own Give token!"
       />
 
       <Container>
